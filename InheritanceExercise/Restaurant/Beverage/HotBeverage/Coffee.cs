@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Restaurant.Beverage.HotBeverage
+namespace Restaurant
 {
     public class Coffee : HotBeverage
     {
         private const double CoffeeMilliliters = 50;
-        private const decimal CoffeePrice = 3.50m;
+        private const decimal CoffeePrice = 3.50M;
 
-        public Coffee(string name, double coffeine) 
-            : base(name, CoffeePrice, CoffeeMilliliters)
+        public Coffee(string name, double caffeine)
+            : base(name, 0, 0)
         {
-            this.Coffeine = coffeine;
+            this.Caffeine = caffeine;
         }
-        public double Coffeine { get; set; }
+
+        public override double Milliliters { get => CoffeeMilliliters; }
+
+        public override decimal Price { get => CoffeePrice; }
+
+        public double Caffeine { get; set; }
     }
 }

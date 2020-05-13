@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MilitaryElite.Enum;
-using MilitaryElite.Interfaces;
 
-namespace MilitaryElite.Models
+namespace MilitaryElite
 {
     public class Spy : Soldier, ISpy
     {
@@ -19,10 +17,8 @@ namespace MilitaryElite.Models
         public override string ToString()
         {
             return base.ToString()
-                + Environment.NewLine
-                + $"Code Number: {this.CodeNumber}";
-    
-
+                    + Environment.NewLine +
+                   $"Code Number: {this.CodeNumber}";
         }
     }
 }

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Telephony
+namespace Telephony.Models
 {
     public class StationaryPhone : ICallable
     {
-        public string Calling(string calling)
+        public string Call(string number)
         {
-            if (calling.Any(x => char.IsDigit(x)))
+            if (number.Any(x => char.IsDigit(x)))
             {
-                return $"Dialing... {calling}";
+                return $"Dialing... {number}";
             }
 
             return "Invalid number!";

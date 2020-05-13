@@ -7,30 +7,25 @@ namespace PersonsInfo
     {
         public static void Main(string[] args)
         {
-            int lines = int.Parse(Console.ReadLine());
-
-            List<Person> persons = new List<Person>();
+            var lines = int.Parse(Console.ReadLine());
+            var persons = new List<Person>();
 
             for (int i = 0; i < lines; i++)
             {
-                string[] info = Console.ReadLine().Split();
-
-                string name = info[0];
-                string lastName = info[1];
-                int age = int.Parse(info[2]);
-                decimal salary = decimal.Parse(info[3]);
-
-
-                Person person = new Person(name, lastName, age, salary);
+                var cmdArgs = Console.ReadLine().Split();
+                var person = new Person(cmdArgs[0],
+                                        cmdArgs[1],
+                                        int.Parse(cmdArgs[2]),
+                                        decimal.Parse(cmdArgs[3]));
 
                 persons.Add(person);
             }
 
-            decimal parcentage = decimal.Parse(Console.ReadLine());
+            var parcentage = decimal.Parse(Console.ReadLine());
 
             persons.ForEach(p => p.IncreaseSalary(parcentage));
-
             persons.ForEach(p => Console.WriteLine(p.ToString()));
+
 
         }
     }

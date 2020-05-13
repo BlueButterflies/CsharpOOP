@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MilitaryElite.Interfaces;
 
-namespace MilitaryElite.Models
+namespace MilitaryElite
 {
     public class LieutenantGeneral : Private, ILieutenantGeneral
     {
-        public LieutenantGeneral(int id, string firstName, string lastName, 
-            decimal salary, Dictionary<int, IPrivate> privates)
+        public LieutenantGeneral(int id, string firstName, string lastName, decimal salary, Dictionary<int, IPrivate> privates)
             : base(id, firstName, lastName, salary)
         {
             this.Privates = privates;
@@ -18,17 +16,17 @@ namespace MilitaryElite.Models
 
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
-            builder.AppendLine(base.ToString());
-            builder.AppendLine("Privates:");
+            sb.AppendLine(base.ToString());
+            sb.AppendLine("Privates:");
 
-            foreach (var item in this.Privates)
+            foreach (var currentPrivate in this.Privates)
             {
-                builder.AppendLine("  " + item.Value.ToString());
+                sb.AppendLine("  " + currentPrivate.Value.ToString());
             }
 
-            return builder.ToString().TrimEnd();
+            return sb.ToString().TrimEnd();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Telephony.Models;
 
 namespace Telephony
 {
@@ -11,26 +12,26 @@ namespace Telephony
             StationaryPhone stationaryPhone = new StationaryPhone();
             IBrowsable browsable = new Smartphone();
 
-            string[] numbers = Console.ReadLine().Split();
-            string[] website = Console.ReadLine().Split();
+            string[] numbers = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            string[] website = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
-           foreach (var nums in numbers)
+            foreach (var nums in numbers)
+            {
+                if (nums.Length >= 10)
                 {
-                    if (nums.Length == 10)
-                    {
-                        Console.WriteLine(smartphone.Calling(nums));
-                    }
-                    else if(nums.Length == 7)
-                    {
-                        Console.WriteLine(stationaryPhone.Calling(nums));
-                    }
+                    Console.WriteLine(smartphone.Call(nums));
                 }
+                else if (nums.Length <= 7)
+                {
+                    Console.WriteLine(stationaryPhone.Call(nums));
+                }
+            }
 
-                foreach (var web in website)
-                {
-                    Console.WriteLine(browsable.Browsing(web));
-                }
-            
+            foreach (var web in website)
+            {
+                Console.WriteLine(browsable.Browse(web));
+            }
+
         }
     }
 }

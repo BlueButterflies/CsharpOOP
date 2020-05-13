@@ -1,9 +1,9 @@
-﻿using MilitaryElite.Interfaces;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MilitaryElite.Models
+namespace MilitaryElite
 {
     public class Repair : IRepair
     {

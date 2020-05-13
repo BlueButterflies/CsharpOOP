@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Restaurant.Beverage.HotBeverage
+namespace Restaurant
 {
     public class HotBeverage : Beverage
     {
-        public HotBeverage(string name, decimal price, double milliliters)
-            : base(name, price, milliliters)
+        public HotBeverage(string name, decimal price, double mililiters)
+            : base(name, price, mililiters)
         {
+
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MilitaryElite.Interfaces
+namespace MilitaryElite
 {
     public interface IEngineer : ISpecialisedSoldier
     {

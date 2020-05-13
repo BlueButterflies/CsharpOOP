@@ -1,14 +1,12 @@
-﻿using MilitaryElite.Enum;
-using MilitaryElite.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MilitaryElite.Models
+namespace MilitaryElite
 {
     public class Commando : SpecialisedSoldier, ICommando
     {
-        public Commando(int id, string firstName, string lastName, decimal salary, Corps corps, ICollection<IMission> missions) 
+        public Commando(int id, string firstName, string lastName, decimal salary, Corps corps, ICollection<IMission> missions)
             : base(id, firstName, lastName, salary, corps)
         {
             this.Missions = missions;
@@ -18,18 +16,18 @@ namespace MilitaryElite.Models
 
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
-            builder.AppendLine(base.ToString());
-            builder.AppendLine($"Corps: {this.Corps}");
-            builder.AppendLine("Missions:");
+            sb.AppendLine(base.ToString());
+            sb.AppendLine($"Corps: {this.Corps}");
+            sb.AppendLine("Missions:");
 
-            foreach (var item in this.Missions)
+            foreach (var currentMission in this.Missions)
             {
-                builder.AppendLine("  " + item.ToString());
+                sb.AppendLine("  " + currentMission.ToString());
             }
 
-            return builder.ToString().TrimEnd();
+            return sb.ToString().TrimEnd();
         }
     }
 }

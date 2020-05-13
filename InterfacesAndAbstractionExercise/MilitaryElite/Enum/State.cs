@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MilitaryElite.Enum
+namespace MilitaryElite
 {
     public enum State
     {

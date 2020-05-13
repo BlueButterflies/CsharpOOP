@@ -1,9 +1,9 @@
-﻿using MilitaryElite.Interfaces;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MilitaryElite.Models
+namespace MilitaryElite
 {
     public abstract class Soldier : ISoldier
     {
@@ -14,11 +14,11 @@ namespace MilitaryElite.Models
             this.LastName = lastName;
         }
 
-        public  int Id { get; }
+        public int Id { get; }
 
-        public  string FirstName { get; }
+        public string FirstName { get; }
 
-        public  string LastName { get; }
+        public string LastName { get; }
 
         public override string ToString()
         {

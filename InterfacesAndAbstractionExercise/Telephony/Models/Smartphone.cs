@@ -9,19 +9,19 @@ namespace Telephony
     public class Smartphone : ICallable, IBrowsable
     {
 
-        public string Calling(string calling)
+        public string Call(string number)
         {
-            if (calling.Any(x => char.IsDigit(x)))
+            if (number.Any(x => char.IsDigit(x)))
             {
-                return $"Calling... {calling}";
+                return $"Calling... {number}";
             }
-
+            
             return "Invalid number!";
         }
 
-        public string Browsing(string website)
+        public string Browse(string website)
         {
-            if (!website.Any(x => char.IsDigit(x)))
+            if (!website.Any(x => char.IsDigit(x)) && !website.Any(x => char.IsWhiteSpace(x)))
             {
                 return $"Browsing: {website}!";
             }

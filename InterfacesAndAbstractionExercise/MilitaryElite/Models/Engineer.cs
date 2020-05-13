@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MilitaryElite.Enum;
-using MilitaryElite.Interfaces;
 
-namespace MilitaryElite.Models
+namespace MilitaryElite
 {
     public class Engineer : SpecialisedSoldier, IEngineer
     {
-        public Engineer(int id, string firstName, string lastName,
-            decimal salary, Corps corps, ICollection<IRepair> repairs) 
+        public Engineer(int id, string firstName, string lastName, decimal salary, Corps corps, ICollection<IRepair> repairs)
             : base(id, firstName, lastName, salary, corps)
         {
             this.Repairs = repairs;
@@ -19,18 +16,18 @@ namespace MilitaryElite.Models
 
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
-            builder.AppendLine(base.ToString());
-            builder.AppendLine($"Corps: {this.Corps}");
-            builder.AppendLine("Repairs:");
+            sb.AppendLine(base.ToString());
+            sb.AppendLine($"Corps: {this.Corps}");
+            sb.AppendLine("Repairs:");
 
-            foreach (var item in this.Repairs)
+            foreach (var currentRepair in this.Repairs)
             {
-                builder.AppendLine("  " + item.ToString());
+                sb.AppendLine("  " + currentRepair.ToString());
             }
 
-            return builder.ToString().TrimEnd();
+            return sb.ToString().TrimEnd();
         }
     }
 }

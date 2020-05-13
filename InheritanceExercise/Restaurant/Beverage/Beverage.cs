@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Restaurant.Beverage
+namespace Restaurant
 {
     public class Beverage : Product
     {
-        public Beverage(string name, decimal price, double milliliters) 
-            : base(name, price)
+        public Beverage(string name, decimal price, double mililiters)
+             : base(name, price)
         {
-            this.Milliliters = milliliters;
+            this.Milliliters = mililiters;
         }
-        public double Milliliters { get; set; }
+
+        public virtual double Milliliters { get; set; }
     }
 }

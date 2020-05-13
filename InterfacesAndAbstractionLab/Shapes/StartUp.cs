@@ -2,16 +2,17 @@
 
 namespace Shapes
 {
-    class StartUp
+    public class StartUp
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var radius = int.Parse(Console.ReadLine());
-            IDraw circle = new Circle(radius);
+            IDrawable circle = new Circle(radius);
 
             var width = int.Parse(Console.ReadLine());
             var height = int.Parse(Console.ReadLine());
-            IDraw rect = new Rectangle(width, height);
+
+            IDrawable rect = new Rectangle(width, height);
 
             circle.Draw();
             rect.Draw();

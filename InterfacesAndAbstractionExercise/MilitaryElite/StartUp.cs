@@ -1,4 +1,4 @@
-﻿using MilitaryElite.Core;
+﻿
 using System;
 
 namespace MilitaryElite
@@ -7,9 +7,7 @@ namespace MilitaryElite
     {
         static void Main(string[] args)
         {
-            IReadCommand command = new ReadCommand();
-
-            IEngine engine = new Engine(command);
+            IEngine engine = new Engine();
 
             engine.Run();
         }

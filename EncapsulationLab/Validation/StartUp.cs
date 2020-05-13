@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PersonsInfo
 {
-    public class StratUp
+    public class StartUp
     {
         public static void Main(string[] args)
         {
