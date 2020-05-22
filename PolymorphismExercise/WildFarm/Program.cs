@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MathOperations
+namespace WildFarm
 {
     class Program
     {

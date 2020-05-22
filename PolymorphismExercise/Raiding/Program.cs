@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Animals
+namespace Raiding
 {
     class Program
     {
